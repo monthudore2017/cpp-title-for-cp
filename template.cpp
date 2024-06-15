@@ -113,7 +113,7 @@ short SNF = 3e4 + 1;
 
 
 template <typename T>
-bl MINUPD(T& a, T& b) {
+bl MI(T& a, T& b) {
     if (b < a) {
         a = b;
         return true;
@@ -122,7 +122,7 @@ bl MINUPD(T& a, T& b) {
 }
 
 template <typename T>
-bl MAXUPD(T& a, T& b) {
+bl MA(T& a, T& b) {
     if (b > a) {
         a = b;
         return true;
@@ -132,7 +132,7 @@ bl MAXUPD(T& a, T& b) {
 
 
 template <typename T1, typename T2>
-ll MOD(T1 a, T2 M) {
+ll MD(T1 a, T2 M) {
     if (a < -M) {
         a = a % M;
         return a + (a < 0) * M;
@@ -167,7 +167,7 @@ ll BP(ll a, ll n, ll M) {
 }
 
 
-string BASE2(ll n) {
+string B2(ll n) {
     string ans;
     while (n != 0) {
         ans += (n % 2 ? "1" : "0");
@@ -176,7 +176,7 @@ string BASE2(ll n) {
     return {ans.rbegin(), ans.rend()};
 }
 
-ll BASE10(string n) {
+ll B10(string n) {
     ll ans = 0;
     ll k = 1;
     reverse(n.begin(), n.end());
@@ -188,11 +188,11 @@ ll BASE10(string n) {
 }
 
 
-bool ISD(char c) {
+bool ID(char c) {
     return '0' <= c && c <= '9';
 }
 
-bool ISL(char c) {
+bool IL(char c) {
     return 'a' <= c && c <= 'z';
 }
 
@@ -200,7 +200,7 @@ bool ISL(char c) {
 
 
 void CASE() {
-    // put your solution for a test case here
+
 }
 
 
@@ -229,7 +229,7 @@ signed main() {
     PRE();
 
     int T = 1;
-//    cin >> T;
+    // cin >> T;
     for (int i = 0; i < T; ++i) {
         CASE();
 //        cout << endl;
