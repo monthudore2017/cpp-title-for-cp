@@ -113,7 +113,7 @@ short SNF = 3e4 + 1;
 
 
 template <typename T>
-bl MI(T& a, T& b) {
+bl MI(T& a, T b) {
     if (b < a) {
         a = b;
         return true;
@@ -122,9 +122,18 @@ bl MI(T& a, T& b) {
 }
 
 template <typename T>
-bl MA(T& a, T& b) {
+bl MA(T& a, T b) {
     if (b > a) {
         a = b;
+        return true;
+    }
+    return false;
+}
+
+template <typename T1, typename T2>
+bl ORD(T1& a, T2& b) {
+    if (a > b) {
+        swap(a, b);
         return true;
     }
     return false;
@@ -160,9 +169,9 @@ ll BP(ll a, ll n, ll M) {
     if (n == 0) return 1;
     if (n % 2 == 0) {
         ll x = BP(a, n / 2, M);
-        return MOD(x * x, M);
+        return MD(x * x, M);
     } else {
-        return MOD(BP(a, n - 1, M) * a, M);
+        return MD(BP(a, n - 1, M) * a, M);
     }
 }
 
@@ -217,7 +226,7 @@ void PRE() {
 
 signed main() {
 #ifdef LOCAL
-    freopen("put the input file dir/in.txt", "r", stdin);
+    freopen("$DIR$/in.txt", "r", stdin);
     clock_t BEGIN = clock();
     rnd.seed(1);
 #else
@@ -229,7 +238,7 @@ signed main() {
     PRE();
 
     int T = 1;
-    // cin >> T;
+    cin >> T;
     for (int i = 0; i < T; ++i) {
         CASE();
 //        cout << endl;
